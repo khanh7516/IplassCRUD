@@ -2,14 +2,14 @@ lang: [English](./README-EN.md) | [日本語](./README.md)
 
 # iplass-skeleton
 
-iPLAssベースのカスタムアプリケーションを作成する場合のgradleプロジェクトのスケルトンです。
+This is the skeleton part of the gradle project for making iPLAss based custom applications.
 
-利用方法は次のドキュメントを参照ください。
+For the guide to use it, please refer to the following documents.
 
-https://iplass.org/docs/gettingstarted/installguide/
+https://iplass.org/en/docs/gettingstarted/installguide/
 
-masterブランチはバージョン3.2のスケルトンプロジェクトです。
-バージョン3.1のスケルトンは3.1.xブランチより取得してください。
+The master branch is a skeleton project for version 3.2.
+The skeleton for version 3.1 is obtained from the 3.1.x branch.
 
 ## Related repositories
 
@@ -17,7 +17,7 @@ masterブランチはバージョン3.2のスケルトンプロジェクトで�
 
 ## License
 
-このスケルトンプロジェクト自体は自由に利用可能です。
+This skeleton project itself is free to use.
 
-ただし、iPLAssのモジュールを取り込んだ状態でこのプロジェクトを再配布した場合、
-iPLAss、また独自に取り込んだモジュールのライセンスに従う必要があります。
+However, to publish this project with imported iPLAss modules, 
+it will be necessary to accquire the liscense for the iPLAss, or for the specific modules imported.

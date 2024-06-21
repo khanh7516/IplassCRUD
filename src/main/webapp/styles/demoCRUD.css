@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+html{
+	background-color: #F4F7FA;
+}
+body{
+	background-color: #F4F7FA;
+}
+.title{
+	width: 80%;
+	background-color: #fff;
+	margin: 0 auto;
+	margin-top: 20px;
+	border-radius: 8px;
+	text-align: center;
+	color: #00185B;
+	padding: 5px;
+}
+.table-container{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 20px;
+	background-color: #fff;
+	padding: 20px 0px;
+	border-radius: 8px;
+}
+.table-container table{
+	width: 95%;
+	margin: 0 auto;
+	border: 1px solid gray;
+}
+thead, tbody{
+	width: 100%;
+	border: 1px solid gray;
+}
+
+td, th{
+	border-right: 1px solid gray;
+}
+td:last-child, th:last-child{
+	border-right: none;
+}
+.button-group{
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+	justify-content: center;
+}
+.button-create{
+	padding: 8px 20px;
+	color: white;
+	background-color: #F16A22;
+	border: none;
+	border-radius: 2px;
+	margin-top: 10px;
+}
+.button-create:hover{
+	text-decoration: none;
+	color: white;
+}
+.form-create{
+	width: 40%;
+	background-color: #fff;
+	margin: 0 auto;
+	margin-top: 30px;
+	padding: 10px;
+	border-radius: 8px;
+}
+.name, .description, .price {
+	padding-top: 20px;
+}

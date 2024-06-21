@@ -31,7 +31,7 @@ function button_onclick(action) {
 	<h1>Edit Product</h1>
 	<c:if test="${editProduct != null}">
 		<form id="bulkForm" method="post" action="">
-			<input type="text" name="productId" value="${editProduct.getOid()}"/>
+			<input type="hidden" name="productId" value="${editProduct.getOid()}"/>
 			<div>
 				<label for="productName">Product Name:</label>
 				<input type="text" id="productName" name="productName" value="${editProduct.getName()}"/>

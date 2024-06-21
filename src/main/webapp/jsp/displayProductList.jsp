@@ -8,7 +8,7 @@
 <%@ page import="org.iplass.mtp.entity.SearchResult"%>
 <%@ page import="org.iplass.mtp.command.RequestContext"%>
 <%@ page import="org.iplass.mtp.web.template.TemplateUtil"%>
-<%-- <%@ page import="demo.entity.Product"%> --%>
+<%@ page import="demo.entity.Product"%>
 <%@ page import="demo.utils.URLHelper"%>
 <%
   RequestContext context = TemplateUtil.getRequestContext();
@@ -17,8 +17,14 @@
 %>
 <!DOCTYPE html>
 <html>
+<%
+	request.setAttribute("staticContentPath", TemplateUtil.getStaticContentPath());
+%>
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="${m:esc(staticContentPath)}/styles/bootstrap.min.css?cv=<%=TemplateUtil.getAPIVersion()%>">
+    <link rel="stylesheet" href="${m:esc(staticContentPath)}/styles/open-iconic-bootstrap.min.css?cv=<%=TemplateUtil.getAPIVersion()%>">
+    <link rel="stylesheet" href="${m:esc(staticContentPath)}/styles/demoCRUD.css?cv=<%=TemplateUtil.getAPIVersion()%>">
 <title>Insert title here</title>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
@@ -31,29 +37,40 @@ function button_onclick(action) {
 
 </head>
 <body>
+	<div class="title">
 	<h1>Product List</h1>	
+	</div>
+	<div class="table-container">
 	<table>
   <thead>
-    <tr>
-    <th>Product Name</th>
-    <th>Product Description</th>
-    <th>Edit</th>
-	<th>Delete</th>
+    <tr class="row">
+    <th class="col-2">Product Image</th>
+    <th class="col-2">Product Name</th>
+    <th class="col-2">Product Description</th>
+    <th class="col-2">Edit</th>
+	<th class="col-2">Delete</th>
     </tr>
   </thead>
   <tbody>
   <% for (Entity p : productList) { %>
-    <tr>
-    <td><%= p.getName() %></td>
-    <td><%= p.getDescription() %></td>
-    <td><a href="<%= URLHelper.getProductEditPath(p.getOid().toString()) %>">Edit</a></td>
-    <td><a href="<%= URLHelper.getProductDeletePath(p.getOid().toString()) %>">Delete</a></td>
+    <tr class="row">
+    <td class="col-2"> <img class="card-img-top img-thumbnail img-fluid all-product-img" src="<%= URLHelper.getProductImageResource(p) %>" alt="<%= p.getName() %>"></td>
+    <td class="col-2"><%= p.getName() %></td>
+    <td class="col-2"><%= p.getDescription() %></td>
+    <td class="col-2"><a href="<%= URLHelper.getProductEditPath(p.getOid().toString()) %>">Edit</a></td>
+    <td class="col-2"><a href="<%= URLHelper.getProductDeletePath(p.getOid().toString()) %>">Delete</a></td>
     </tr>
    <%}%>
   </tbody>
 </table>
+</div>
+<div class="button-group">
+<a class="button-create" href="${m:tcPath()}/demoApp/product/displayCreateProductPage">Create New Product</a>
+</div>
 
-<a href="${m:tcPath()}/demoApp/product/displayCreateProductPage">Create New Product</a>
 
+<script type="text/javascript" src="${m:esc(staticContentPath)}/scripts/jquery-3.3.1.min.js?cv=<%=TemplateUtil.getAPIVersion()%>"></script>
+    <script type="text/javascript" src="${m:esc(staticContentPath)}/scripts/popper.min.js?cv=<%=TemplateUtil.getAPIVersion()%>"></script>
+    <script type="text/javascript" src="${m:esc(staticContentPath)}/scripts/bootstrap.min.js?cv=<%=TemplateUtil.getAPIVersion()%>"></script>
 </body>
 </html>

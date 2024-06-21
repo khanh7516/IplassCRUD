@@ -36,7 +36,7 @@ public class DisplayProductList implements Command {
 		EntityManager em = ManagerLocator.manager(EntityManager.class);
 		
 		//Tạo query gọi toàn bộ product với 2 trường name và description
-		SearchResult<Entity> productList = em.searchEntity(new Query().select("oid","name", "description").from("demoApp.product.Product"));
+		SearchResult<Entity> productList = em.searchEntity(new Query().select("oid","name", "description", "productImage").from("demoApp.product.Product"));
 		
 		//gán giá trị productList cho attribute productList để hiển thị tại template
 		request.setAttribute("productList", productList);

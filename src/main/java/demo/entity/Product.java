@@ -1,6 +1,7 @@
 package demo.entity;
 
 
+import org.iplass.mtp.entity.BinaryReference;
 import org.iplass.mtp.entity.GenericEntity;
 
 /**
@@ -15,6 +16,8 @@ public class Product extends GenericEntity {
 
 	/** Price */
 	public static final String PRICE = "price";
+	/** ProductImage */
+	public static final String PRODUCT_IMAGE = "productImage";
 
 	public Product() {
 		setDefinitionName(DEFINITION_NAME);
@@ -36,6 +39,24 @@ public class Product extends GenericEntity {
 	 */
 	public void setPrice(Long price) {
 		setValue(PRICE, price);
+	}
+
+	/**
+	 * ProductImageを返します。
+	 * 
+	 * @return ProductImage
+	 */
+	public BinaryReference getProductImage() {
+		return getValue(PRODUCT_IMAGE);
+	}
+
+	/**
+	 * ProductImageを設定します。
+	 * 
+	 * @param productImage ProductImage
+	 */
+	public void setProductImage(BinaryReference productImage) {
+		setValue(PRODUCT_IMAGE, productImage);
 	}
 
 }

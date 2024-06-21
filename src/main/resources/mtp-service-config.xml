@@ -203,6 +203,7 @@
 		<property name="annotatedClass" value="demo.command.EditProduct" additional="true" />
 		<property name="annotatedClass" value="demo.command.EditProductSuccessful" additional="true" />
 		<property name="annotatedClass" value="demo.command.DeleteProduct" additional="true" />
+		<property name="annotatedClass" value="demo.command.resource.DownloadBinaryCommand" additional="true" />
 <!-- 		<property name="annotatedClass" value="demo.command.DisplayCreateProductPage" additional="true" /> -->
 		<!-- ■ your tenantLocalStore ■ -->
 		<!--

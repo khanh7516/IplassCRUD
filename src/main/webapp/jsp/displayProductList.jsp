@@ -44,9 +44,10 @@ function button_onclick(action) {
 	<table>
   <thead>
     <tr class="row">
-    <th class="col-3">Product Name</th>
+    <th class=col-3>Image</th>
+    <th class="col-2">Product Name</th>
     <th class="col-3">Product Description</th>
-    <th class="col-3">Price</th>
+    <th class="col-2">Price</th>
     <th class="col-1">Edit</th>
 	<th class="col-1">Delete</th>
     </tr>
@@ -54,9 +55,10 @@ function button_onclick(action) {
   <tbody>
   <% for (Entity p : productList) { %>
     <tr class="row">
-    <td class="col-3"><%= p.getName() %></td>
+    <td class="col-3"> <img class="card-img-top img-thumbnail img-fluid all-product-img" src="<%= URLHelper.getProductImageResource(p) %>" alt="<%= p.getName() %>"></td>
+    <td class="col-2"><%= p.getName() %></td>
     <td class="col-3"><%= p.getDescription() %></td>
-    <td class="col-3"><%= p.getValue("price") != null ? p.getValue("price").toString() : "" %></td>
+    <td class="col-2"><%= p.getValue("price") != null ? p.getValue("price").toString() : "" %></td>
     <td class="col-1"><a href="<%= URLHelper.getProductEditPath(p.getOid().toString()) %>">Edit</a></td>
     <td class="col-1"><a href="<%= URLHelper.getProductDeletePath(p.getOid().toString()) %>">Delete</a></td>
     </tr>

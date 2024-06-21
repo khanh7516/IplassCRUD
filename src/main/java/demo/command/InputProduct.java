@@ -18,7 +18,7 @@ import org.iplass.mtp.web.template.TemplateUtil;
 displayName="Input New Product Action",
 privileged=true,
 result=@Result(type=Type.REDIRECT,
-    value="disInput"),
+value="disInput"),
 command=@CommandConfig(commandClass=InputProduct.class)
 )
 
@@ -37,13 +37,14 @@ public class InputProduct implements Command {
 		String productPriceStr  = request.getParam("productPrice");
 		
 		// Kiểm tra và chuyển đổi giá trị productPrice
-        Integer productPrice = null;
+        Long productPrice = 0L;
         if (productPriceStr != null && !productPriceStr.trim().isEmpty()) {
             try {
-                productPrice = Integer.parseInt(productPriceStr);
+                productPrice = Long.parseLong(productPriceStr);
             } catch (NumberFormatException e) {
                 // Xử lý lỗi khi chuyển đổi giá trị productPrice không thành công
                 request.setAttribute("errorMessage", "Invalid price format.");
+                request.setAttribute("disInput", TemplateUtil.getTenantContextPath() + "/demoApp/product/displayProductList");
                 return Constants.CMD_EXEC_FAILURE;
             }
         }

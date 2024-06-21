@@ -38,7 +38,7 @@ public class DisplayProductList implements Command {
 		//Tạo query gọi toàn bộ product với 2 trường name và description
 //		SearchResult<Entity> productList = em.searchEntity(new Query().select("oid","name", "description","price").from("demoApp.product.Product"));
 		Query query = new Query()
-                .select("oid", "name", "description", "price")
+                .select("oid", "name", "description", "price","productImage")
                 .from("demoApp.product.Product");
 		SearchResult<Entity> productList = em.searchEntity(query);
 		//gán giá trị productList cho attribute productList để hiển thị tại template
